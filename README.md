@@ -18,7 +18,7 @@
 
 It is a Redis-inspired in-memory datastore built from scratch in Go.
 
-Instead of relying on mutexes and shared state, GoDis uses the **Actor Pattern**, where every component owns its state and communicates through message passing.
+Instead of relying on mutexes and shared state, it uses the **Actor Design Pattern**, where every component owns its state and communicates through message passing.
 
 The goal of this project was not to replace Redis, but to deeply understand:
 
@@ -37,7 +37,7 @@ The goal of this project was not to replace Redis, but to deeply understand:
 
 Traditional Redis follows a single-threaded event-loop architecture.
 
-GoDis explores a different approach:
+It explores a different approach:
 
 ```text
 Client
