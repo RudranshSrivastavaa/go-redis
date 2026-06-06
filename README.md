@@ -194,7 +194,7 @@ Instead of maintaining a true LRU linked list:
 O(log n)
 ```
 
-GoDis uses:
+Go Redis uses:
 
 ```text
 Candidate Pool
@@ -274,6 +274,19 @@ Responsible for:
 
 ---
 
+### Lightweight Deployment Model
+
+It runs as a single Go binary.
+
+Benefits:
+
+Simple deployment
+Minimal runtime dependencies
+Lower operational overhead
+Easier edge deployment
+
+For smaller teams, this can reduce infrastructure management complexity.
+
 ## Design Principles
 
 ### Lock-Free Storage Access
@@ -288,7 +301,7 @@ Mutex
 Shared Map
 ```
 
-GoDis uses:
+Go Redis uses:
 
 ```text
 Actor
@@ -371,7 +384,7 @@ Machine:
 
 ## 50 Concurrent Clients
 
-### GoDis
+### Go Redis
 
 <p align="center">
   <img src="docs/goredis-50-clients.png" width="1000"/>
@@ -387,7 +400,7 @@ Machine:
 
 ## 500 Concurrent Clients
 
-### GoDis
+### Go Redis
 
 <p align="center">
   <img src="docs/goredis-500-clients.png" width="1000"/>
@@ -456,29 +469,6 @@ Benefits:
 
 ---
 
-### Replication
-
-Planned:
-
-```text
-Primary
-   ↓
-ReplicationActor
-   ↓
-Replica Nodes
-```
-
----
-
-### Cluster Mode
-
-Planned:
-
-* Consistent Hashing
-* Dynamic Rebalancing
-* Multi-Node Deployment
-
----
 
 ### Raft-Based Coordination
 
@@ -490,19 +480,7 @@ Planned:
 
 ---
 
-## What I Learned
-
-Building GoDis provided hands-on experience with:
-
-* TCP Networking
-* RESP Protocol
-* Actor Systems
-* Concurrent Architectures
-* Cache Design
-* Pub/Sub Internals
-* Eviction Algorithms
-* Performance Benchmarking
-* Systems Programming in Go
+## What I discovered
 
 One of the most interesting discoveries was seeing how far an actor-based architecture can scale before mailbox contention becomes the dominant bottleneck.
 
