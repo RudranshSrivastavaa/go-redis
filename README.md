@@ -16,7 +16,7 @@
 
 ## Overview
 
-GoDis is a Redis-inspired in-memory datastore built from scratch in Go.
+It is a Redis-inspired in-memory datastore built from scratch in Go.
 
 Instead of relying on mutexes and shared state, GoDis uses the **Actor Pattern**, where every component owns its state and communicates through message passing.
 
