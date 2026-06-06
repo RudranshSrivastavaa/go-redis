@@ -20,17 +20,6 @@ It is a Redis-inspired in-memory datastore built from scratch in Go.
 
 Instead of relying on mutexes and shared state, it uses the **Actor Design Pattern**, where every component owns its state and communicates through message passing.
 
-The goal of this project was not to replace Redis, but to deeply understand:
-
-* Distributed Systems
-* In-Memory Databases
-* Actor-Based Architectures
-* Concurrency Models
-* RESP Protocol
-* Cache Eviction Strategies
-* Pub/Sub Systems
-* Performance Engineering
-
 ---
 
 ## Why Build Redis with Actors?
